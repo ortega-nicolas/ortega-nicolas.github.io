@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Misc – Nicolás Ortega</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      font-family: system-ui, sans-serif;
+      color: #222;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: #ffffff;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .navbar a:hover {
+      color: #b00020;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2.5rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .item {
+      margin-bottom: 2rem;
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+    }
+
+    a.btn {
+      background: #b00020;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-top: 0.6rem;
+    }
+
+    a.btn:hover {
+      background: #8a0018;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div><strong>Nicolás Ortega</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="misc.html">Misc</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <h1>Miscellaneous Works</h1>
+    <p>Selected essays and research pieces that don’t fit into other sections.</p>
+
+    <!-- ITEM 1 -->
+    <div class="item">
+      <div class="title">
+        Regional Dimensions of Migration Sentiments in France: An NLP Analysis of Media Coverage Following the Charlie Hebdo Attack
+      </div>
+      <div class="subtitle">(Research essay)</div>
+      <p>
+        Explores regional variation in migration-related sentiment across French media after the 2015 Charlie Hebdo attack, using natural language processing (NLP) to detect patterns of tone and framing.
+      </p>
+      <a class="btn" href="docs/regional-dimensions-migration-sentiments-france.pdf" target="_blank">Open PDF</a>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="item">
+      <div class="title">
+        Racines et Ailes : La Mémoire et l’Innovation dans la Construction du Futur
+      </div>
+      <div class="subtitle">(Essay, in French)</div>
+      <p>
+        A narrative essay exploring the role of memory and innovation in intergenerational collaboration, inspired by Silvania (Colombia).
+      </p>
+      <a class="btn" href="docs/racines-et-ailes-memoire-innovation.pdf" target="_blank">Ouvrir le PDF</a>
+    </div>
+  </div>
+
+</body>
+</html>
