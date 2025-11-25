@@ -7,78 +7,42 @@
   <link rel="icon" href="favicon.png" type="image/png">
 
   <style>
-    body {
-      margin: 0;
-      background: #ffffff;
-      font-family: system-ui, sans-serif;
-      color: #222;
-    }
+    body { margin:0; background:#ffffff; font-family:system-ui, sans-serif; color:#222; }
 
     /* NAVBAR */
     .navbar {
-      background: #ffffff;
-      border-bottom: 1px solid #e6e6e6;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background:#ffffff; border-bottom:1px solid #e6e6e6;
+      padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center;
+      position:sticky; top:0; z-index:10;
     }
+    .navbar a { margin-left:20px; text-decoration:none; color:#444; font-size:.95rem; }
+    .navbar a:hover { color:#b00020; }
 
-    .navbar a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #444;
-      font-size: 0.95rem;
-    }
+    /* LAYOUT */
+    .container { max-width:900px; margin:auto; padding:2.5rem; line-height:1.6; }
+    h1 { font-size:1.8rem; margin-bottom:.5rem; }
 
-    .navbar a:hover {
-      color: #b00020;
+    /* HERO IMAGE */
+    .hero {
+      margin:1rem 0 2rem 0;
+      border-radius:16px; overflow:hidden; border:1px solid #eee;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
     }
+    .hero img { width:100%; height:auto; display:block; }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2.5rem;
-      line-height: 1.6;
-    }
+    /* LISTA CON BULLETS */
+    ul.work-list { padding-left:1.2rem; margin:1.2rem 0 0 0; }
+    ul.work-list li { margin:1.2rem 0; }
 
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .item {
-      margin-bottom: 2rem;
-    }
-
-    .title {
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    .subtitle {
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 0.2rem;
-    }
+    .title { font-weight:600; font-size:1.05rem; }
+    .subtitle { color:#666; font-size:.9rem; margin:.15rem 0 .35rem 0; }
+    .desc { margin:.25rem 0 .5rem 0; }
 
     a.btn {
-      background: #b00020;
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
-      color: white;
-      text-decoration: none;
-      font-size: 0.9rem;
-      display: inline-block;
-      margin-top: 0.6rem;
+      background:#b00020; padding:.5rem 1.2rem; border-radius:20px; color:white;
+      text-decoration:none; font-size:.9rem; display:inline-block; margin-top:.2rem;
     }
-
-    a.btn:hover {
-      background: #8a0018;
-    }
+    a.btn:hover { background:#8a0018; }
   </style>
 </head>
 
@@ -101,29 +65,37 @@
     <h1>Miscellaneous Works</h1>
     <p>Selected essays and research pieces that don’t fit into other sections.</p>
 
-    <!-- ITEM 1 -->
-    <div class="item">
-      <div class="title">
-        Regional Dimensions of Migration Sentiments in France: An NLP Analysis of Media Coverage Following the Charlie Hebdo Attack
-      </div>
-      <div class="subtitle">(Research poster)</div>
-      <p>
-        Explores regional variation in migration-related sentiment across French media after the 2015 Charlie Hebdo attack, using natural language processing (NLP) to detect patterns of tone and framing.
-      </p>
-      <a class="btn" href="docs/BIG_DATA_Poster_BDOS.pdf" target="_blank">Open PDF</a>
-    </div>
+    <!-- FOTO / HERO -->
+    <figure class="hero">
+      <img src="Sorbonne.PNG" alt="Sorbonne University" loading="lazy">
+    </figure>
 
-    <!-- ITEM 2 -->
-    <div class="item">
-      <div class="title">
-        Racines et Ailes : La Mémoire et l’Innovation dans la Construction du Futur
-      </div>
-      <div class="subtitle">(Essay, in French)</div>
-      <p>
-        A narrative essay exploring the role of memory and innovation in intergenerational collaboration, inspired by my grandma (Colombia).
-      </p>
-      <a class="btn" href="docs/Racines.pdf" target="_blank">Ouvrir le PDF</a>
-    </div>
+    <!-- LISTA CON BULLETS -->
+    <ul class="work-list">
+
+      <li>
+        <div class="title">
+          Regional Dimensions of Migration Sentiments in France: An NLP Analysis of Media Coverage Following the Charlie Hebdo Attack
+        </div>
+        <div class="subtitle">(Research poster)</div>
+        <div class="desc">
+          Explores regional variation in migration-related sentiment across French media after the 2015 Charlie Hebdo attack, using NLP to detect patterns of tone and framing.
+        </div>
+        <a class="btn" href="BIG_DATA_Poster_BDOS.pdf" target="_blank">Open PDF</a>
+      </li>
+
+      <li>
+        <div class="title">
+          Racines et Ailes : La Mémoire et l’Innovation dans la Construction du Futur
+        </div>
+        <div class="subtitle">(Essay, in French)</div>
+        <div class="desc">
+          A narrative essay exploring the role of memory and innovation in intergenerational collaboration, inspired by Silvania (Colombia).
+        </div>
+        <a class="btn" href="Racines.pdf" target="_blank">Ouvrir le PDF</a>
+      </li>
+
+    </ul>
   </div>
 
 </body>
