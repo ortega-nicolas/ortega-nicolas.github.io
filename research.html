@@ -14,39 +14,52 @@
     ul { list-style-type: disc; }
     a { color: #b00020; text-decoration: none; }
     a:hover { text-decoration: underline; }
-.album {
-  display: flex;
-  overflow-x: auto;
-  gap: 12px;
-  margin-top: 10px;
-  padding-bottom: 8px;
-  scroll-behavior: smooth;
-}
 
-.album::-webkit-scrollbar {
-  height: 8px;
-}
+    /* Carrusel */
+    .carousel {
+      position: relative;
+      max-width: 700px;
+      margin-top: 15px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
 
-.album::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
-}
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
 
-.album img {
-  height: 160px;
-  border-radius: 10px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .carousel-images img {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+    }
 
-.album img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+    /* Botones (flechas) */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      padding: 8px 12px;
+      font-size: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+    }
 
-    
+    .prev:hover, .next:hover {
+      background-color: rgba(255, 255, 255, 1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
   </style>
 </head>
+
 <body>
   <div class="navbar">
     <div><strong>Nicolás Ortega</strong></div>
@@ -65,30 +78,49 @@
       <li>
         <strong>The Tone of Solidarity: Race, Colorism, and Attitudes Toward Redistribution in Colombia in Times of Migration</strong><br>
         Supervisors: Hillel Rapoport and Clément Gorin.
-          <div class="album">
-    <img src="race1.png" alt="Race study 1">
-    <img src="race2.jpeg" alt="Race study 2">
-    <img src="race3.jpg" alt="Race study 3">
-    <img src="race4.png" alt="Race study 4">
-    <img src="race5.png" alt="Race study 5">
-  </div>
 
-        
+        <!-- Carrusel de imágenes -->
+        <div class="carousel">
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <div class="carousel-images">
+            <img src="race1.png" alt="Race study 1">
+            <img src="race2.jpeg" alt="Race study 2">
+            <img src="race3.jpg" alt="Race study 3">
+            <img src="race4.png" alt="Race study 4">
+            <img src="race5.png" alt="Race study 5">
+          </div>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
       </li>
+
       <li>
         <strong>Changing the tax structure to reduce income inequality in Colombia</strong>: 
         A microsimulation model. 
         <a href="https://repository.javeriana.edu.co/items/c922ff3c-e53a-4fec-a5b5-8dc9fc30341c" target="_blank">[Published – link]</a>
       </li>
+
       <li>
         <strong>International Migration Outlook 2022 report</strong>. 
         <a href="https://www.oecd.org/en/publications/international-migration-outlook-2022_30fe16d2-en.html#:~:text=First%20data%20suggest%20that%20the,permanent%20immigrants%20to%20the%20OECD." target="_blank">[Published – OECD link]</a>
       </li>
+
       <li>
         <strong>Estudio de convergencia Beta y Sigma en América Latina</strong>. 
         <a href="https://drive.google.com/file/d/1AEHc5gFPsT_Q2uaRMlnxy1aQ0Gkmg-OZ/view" target="_blank">[Published – link]</a>
       </li>
     </ul>
   </div>
+
+  <!-- Script del carrusel -->
+  <script>
+    let currentSlide = 0;
+
+    function moveSlide(direction) {
+      const slides = document.querySelector(".carousel-images");
+      const totalSlides = slides.children.length;
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  </script>
 </body>
 </html>
