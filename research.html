@@ -14,6 +14,37 @@
     ul { list-style-type: disc; }
     a { color: #b00020; text-decoration: none; }
     a:hover { text-decoration: underline; }
+.album {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  margin-top: 10px;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+.album::-webkit-scrollbar {
+  height: 8px;
+}
+
+.album::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.album img {
+  height: 160px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+    
   </style>
 </head>
 <body>
@@ -34,6 +65,15 @@
       <li>
         <strong>The Tone of Solidarity: Race, Colorism, and Attitudes Toward Redistribution in Colombia in Times of Migration</strong><br>
         Supervisors: Hillel Rapoport and Clément Gorin.
+          <div class="album">
+    <img src="race1.png" alt="Race study 1">
+    <img src="race2.jpeg" alt="Race study 2">
+    <img src="race3.jpg" alt="Race study 3">
+    <img src="race4.png" alt="Race study 4">
+    <img src="race5.png" alt="Race study 5">
+  </div>
+
+        
       </li>
       <li>
         <strong>Changing the tax structure to reduce income inequality in Colombia</strong>: 
