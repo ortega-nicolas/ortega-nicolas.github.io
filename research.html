@@ -57,6 +57,20 @@
 
     .prev { left: 10px; }
     .next { right: 10px; }
+
+    /* Botón de descarga */
+    .download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #b00020;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    .download-btn:hover { background-color: #900019; }
   </style>
 </head>
 
@@ -80,8 +94,8 @@
         Supervisors: Hillel Rapoport and Clément Gorin.
 
         <!-- Carrusel de imágenes -->
-        <div class="carousel">
-          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel" id="carousel1">
+          <button class="prev" onclick="moveSlide(-1, 'carousel1')">&#10094;</button>
           <div class="carousel-images">
             <img src="race1.png" alt="Race study 1">
             <img src="race2.jpeg" alt="Race study 2">
@@ -89,7 +103,7 @@
             <img src="race4.png" alt="Race study 4">
             <img src="race5.png" alt="Race study 5">
           </div>
-          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+          <button class="next" onclick="moveSlide(1, 'carousel1')">&#10095;</button>
         </div>
       </li>
 
@@ -98,8 +112,8 @@
         Collaborative policy toolkit exploring climate-induced migration and social protection strategies in Uganda.
 
         <!-- Carrusel -->
-        <div class="carousel">
-          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel" id="carousel2">
+          <button class="prev" onclick="moveSlide(-1, 'carousel2')">&#10094;</button>
           <div class="carousel-images">
             <img src="geneva_1.png" alt="Page 1">
             <img src="geneva_2.png" alt="Page 2">
@@ -110,7 +124,7 @@
             <img src="geneva_7.png" alt="Page 7">
             <img src="geneva_8.png" alt="Page 8">
           </div>
-          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+          <button class="next" onclick="moveSlide(1, 'carousel2')">&#10095;</button>
         </div>
 
         <!-- Botón de descarga -->
@@ -121,10 +135,6 @@
         </div>
       </li>
 
-
-
-
-      
       <li>
         <strong>Changing the tax structure to reduce income inequality in Colombia</strong>: 
         A microsimulation model. 
@@ -145,14 +155,17 @@
 
   <!-- Script del carrusel -->
   <script>
-    let currentSlide = 0;
+  function moveSlide(direction, carouselId) {
+    const carousel = document.getElementById(carouselId);
+    const slides = carousel.querySelector(".carousel-images");
+    const totalSlides = slides.children.length;
 
-    function moveSlide(direction) {
-      const slides = document.querySelector(".carousel-images");
-      const totalSlides = slides.children.length;
-      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
+    let currentSlide = parseInt(carousel.getAttribute("data-slide")) || 0;
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+
+    carousel.setAttribute("data-slide", currentSlide);
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
   </script>
 </body>
 </html>
