@@ -4,21 +4,60 @@
   <meta charset="UTF-8">
   <title>Teaching – Nicolás Ortega</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png">
+
   <style>
-    body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; color: #222; }
-    .navbar { background: #ffffff; border-bottom: 1px solid #e6e6e6; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .navbar a { margin-left: 20px; text-decoration: none; color: #444; font-size: 0.95rem; }
-    .navbar a:hover { color: #b00020; }
-    .container { max-width: 900px; margin: auto; padding: 2.5rem; line-height: 1.6; }
+    body { margin:0; background:#ffffff; font-family:system-ui,sans-serif; color:#222; }
+
+    /* NAVBAR */
+    .navbar {
+      background:#ffffff;
+      border-bottom:1px solid #e6e6e6;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .navbar strong {
+      font-size:1.8rem;
+      font-weight:700;
+      text-transform:uppercase;
+      color:#000;
+      letter-spacing:0.5px;
+    }
+    .navbar a {
+      margin-left:20px;
+      text-decoration:none;
+      color:#444;
+      font-size:0.95rem;
+    }
+    .navbar a:hover { color:#b00020; }
+
+    /* CONTENIDO */
+    .container {
+      max-width:900px;
+      margin:auto;
+      padding:2.5rem;
+      line-height:1.6;
+    }
+
+    h1 { font-size:1.9rem; margin-bottom:.5rem; color:#b00020; }
+    h2 { margin-top:2rem; font-size:1.3rem; color:#222; }
+    ul { padding-left:1.2rem; }
+    li { margin:0.4rem 0; }
   </style>
 </head>
+
 <body>
+
+  <!-- NAVBAR -->
   <div class="navbar">
-    <div><strong>Nicolás Ortega</strong></div>
+    <div><strong>Nicolás ORTEGA RODRÍGUEZ</strong></div>
     <div>
       <a href="index.html">Home</a>
-      <a href="index.html#news">News</a>
       <a href="research.html">Research</a>
       <a href="teaching.html">Teaching</a>
       <a href="misc.html">Misc</a>
@@ -26,12 +65,25 @@
     </div>
   </div>
 
+  <!-- MAIN CONTENT -->
   <div class="container">
-    <h2>Teaching</h2>
-    <p>
-      Here you can add information about your teaching activities: courses, level, universities,
-      and your role (lecturer, TA, etc.).
-    </p>
+    <h1>TA (Teaching Assistant)</h1>
+
+    <h2>Sorbonne University</h2>
+    <ul>
+      <li><em>Introduction générale à l'économie (IGE)</em> – first year of undergraduate studies. <em>Taught in French.</em> (2024–2025)</li>
+      <li><em>Macroéconomie Ouverte</em> (“Open Macroeconomics”) – second year of Bachelor's degree. <em>Taught in French.</em> (2022–2023)</li>
+    </ul>
+
+    <h2>Javeriana University</h2>
+    <ul>
+      <li><em>Monetary Theory and Policy</em> – Prof. Jorge Toro (2018-1, 2018-2)</li>
+      <li><em>International Economics</em> – Prof. Rolando Escobar (2018-1, 2018-2)</li>
+      <li><em>Intermediate Microeconomics</em> – Prof. Luz Magdalena (2017-2)</li>
+      <li><em>Fundamentals of Microeconomics</em> – Prof. Juanita Cifuentes (2016-1, 2016-2, 2017-1)</li>
+      <li><em>Principles of Economics</em> – Prof. Ignacio Penagos (2017-1, 2017-2)</li>
+    </ul>
   </div>
+
 </body>
 </html>
